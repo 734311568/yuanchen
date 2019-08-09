@@ -19,17 +19,31 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 public class UserController {
-	
+
 	@Autowired
 	private UserRepository userRepository;
 
 	@RequestMapping("/user")
-	
+
 	public String getUser(Model model) {
+		List<Userinfo> queryUser = userRepository.findList();
+		model.addAttribute("queryUser", queryUser);
+		return "userList";
+	}
+
+	//添加数据的方法
+	@RequestMapping("/add")
+
+	public String getUserList(Model model) {
+
+		userRepository.save(new Userinfo(1, "小p", 1234));
+		userRepository.save(new Userinfo(3, "萧严", 99999));
+		userRepository.save(new Userinfo(2, "伟伟", 0006));
 		List<Userinfo> queryUser = userRepository.findList();
 		 model.addAttribute("queryUser",queryUser);
 		return "userList";
+
+
 	}
-	
- 
+
 }

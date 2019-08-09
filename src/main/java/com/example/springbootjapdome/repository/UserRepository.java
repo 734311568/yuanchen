@@ -18,5 +18,6 @@ public interface UserRepository extends CrudRepository<Userinfo, Long> {
 
 	@Query("select u from Userinfo u")
 	List<Userinfo> findList();
+	 Userinfo save(Userinfo user);
 
 }

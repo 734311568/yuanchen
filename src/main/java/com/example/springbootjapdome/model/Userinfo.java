@@ -27,6 +27,16 @@ public class Userinfo {
 	@Column(nullable = false)
 	private Integer passWord;
 
+	public Userinfo(long id, String userName, Integer passWord) {
+		this.id = id;
+		this.userName = userName;
+		this.passWord = passWord;
+	}
+
+	public Userinfo() {
+	}
+
+
 	public String getUserName() {
 		return userName;
 	}
