@@ -37,8 +37,9 @@ public class UserController {
 	public String getUserList(Model model) {
 
 		userRepository.save(new Userinfo(1, "小p", 1234));
-		userRepository.save(new Userinfo(3, "萧严", 99999));
-		userRepository.save(new Userinfo(2, "伟伟", 0006));
+		userRepository.save(new Userinfo(3, "萧严", 5555));
+		userRepository.save(new Userinfo(2, "伟伟", 3086));
+		userRepository.save(new Userinfo(4, "天天",7706));
 		List<Userinfo> queryUser = userRepository.findList();
 		 model.addAttribute("queryUser",queryUser);
 		return "userList";
